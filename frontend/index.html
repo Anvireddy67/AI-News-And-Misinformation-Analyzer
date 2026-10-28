@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI News & Misinformation Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+  <header class="header">
+    <div class="container nav">
+      <div>
+        <h1>AI News & Misinformation Analyzer</h1>
+        <p class="tagline">Check news claims using transparent, explainable analysis.</p>
+      </div>
+      <a class="github-link" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div>
+        <span class="badge">B.Tech AIML Project</span>
+        <h2>Analyze a news claim</h2>
+        <p>Paste a headline or news text. The system checks the content using simple explainable rules and stores your analysis history in Supabase PostgreSQL.</p>
+      </div>
+      <div class="info-box">
+        <strong>Important:</strong>
+        <span>This is an educational analyzer, not a replacement for professional fact-checking.</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>New Analysis</h2>
+        <form id="analysisForm">
+          <label for="headline">News headline</label>
+          <input id="headline" name="headline" maxlength="300" required placeholder="Example: Scientists discover a new planet...">
+
+          <label for="content">News content / claim</label>
+          <textarea id="content" name="content" rows="10" maxlength="10000" required placeholder="Paste the news text or claim here..."></textarea>
+
+          <button id="analyzeBtn" type="submit">Analyze News</button>
+          <p id="formMessage" class="message" aria-live="polite"></p>
+        </form>
+      </article>
+
+      <article class="card">
+        <div class="section-heading">
+          <h2>Latest Result</h2>
+          <button id="refreshBtn" class="secondary" type="button">Refresh History</button>
+        </div>
+        <div id="result" class="empty-state">Your analysis result will appear here.</div>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <h2>Analysis History</h2>
+        <input id="searchInput" class="search" placeholder="Search history..." aria-label="Search analysis history">
+      </div>
+      <div id="history" class="history-list">
+        <div class="empty-state">Loading history...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Educational full-stack project using HTML, CSS, Vanilla JavaScript, Node.js, Express.js and Supabase PostgreSQL.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
